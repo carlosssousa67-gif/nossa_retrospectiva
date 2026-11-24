@@ -132,6 +132,85 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Slide de destaque máximo para frase única */
+    .slide.slide-love-spotlight {
+      background:
+        radial-gradient(circle at 50% 45%, rgba(244, 114, 182, 0.34) 0%, rgba(192, 38, 211, 0.22) 38%, rgba(46, 16, 101, 0.55) 72%, rgba(20, 5, 34, 0.9) 100%);
+    }
+
+    .love-halo {
+      position: relative;
+      padding: 28px 18px;
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .love-halo::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(232, 121, 249, 0.38) 0%, rgba(244, 114, 182, 0.14) 55%, transparent 75%);
+      filter: blur(22px);
+      z-index: -1;
+      animation: haloPulse 3.2s ease-in-out infinite;
+    }
+
+    .love-phrase {
+      font-size: 2.05rem;
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #ffffff 0%, #fbcfe8 38%, #f0abfc 72%, #e879f9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter:
+        drop-shadow(0 0 14px rgba(244, 114, 182, 0.65))
+        drop-shadow(0 0 28px rgba(192, 38, 211, 0.45));
+      animation: phraseGlow 3.2s ease-in-out infinite;
+      max-width: 100%;
+    }
+
+    .love-subtag {
+      margin-top: 18px;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(251, 207, 232, 0.72);
+    }
+
+    @keyframes phraseGlow {
+      0%, 100% {
+        transform: scale(1);
+        filter:
+          drop-shadow(0 0 12px rgba(244, 114, 182, 0.55))
+          drop-shadow(0 0 24px rgba(192, 38, 211, 0.38));
+      }
+      50% {
+        transform: scale(1.03);
+        filter:
+          drop-shadow(0 0 20px rgba(244, 114, 182, 0.85))
+          drop-shadow(0 0 38px rgba(232, 121, 249, 0.62));
+      }
+    }
+
+    @keyframes haloPulse {
+      0%, 100% {
+        opacity: 0.75;
+        transform: scale(0.95);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+    }
+
     /* Foto de fundo com transparência no 1º story */
     .bg-photo-wrapper {
       position: absolute;
@@ -344,7 +423,7 @@
       </div>
       <div class="slide-content">
         <h1>Uma breve retrospectiva...</h1>
-        <p>Nos conhecemos há pouco tempo nos vimos pela primeira vez essa semana (erro meu), mas já tá tudo bem intenso por aqui.</p>
+        <p>Nos conhecemos há pouco tempo e se viu pela primeira vez essa semana (erro meu), mas já tá tudo bem intenso por aqui.</p>
       </div>
     </div>
 
@@ -433,7 +512,37 @@
       </div>
     </div>
 
-    <!-- STORY 8: Último story + contagem regressiva -->
+    <!-- STORY 8: Boletim da Distância -->
+    <div class="slide">
+      <div class="slide-content">
+        <span class="badge-pill">📡 Boletim da distância</span>
+        <h1 style="margin-bottom: 18px;">Semana 1 — Updates</h1>
+        <div class="stat-card">
+          <strong>Atualização 1:</strong>
+          <span>Estou com muitas saudades de você.</span>
+        </div>
+        <div class="stat-card magenta-accent">
+          <strong>Atualização 2:</strong>
+          <span>A lista de dates que eu estou planejando para nós está enorme.</span>
+        </div>
+        <div class="stat-card">
+          <strong>Atualização 3:</strong>
+          <span>Estou ansioso para quando você voltar, e eu poder me declarar olhando no fundo dos seus olhos.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STORY 9: Frase única com brilho -->
+    <div class="slide slide-love-spotlight">
+      <div class="slide-content">
+        <div class="love-halo">
+          <p class="love-phrase">TE QUERO MUITO, MEU AMOR!</p>
+          <span class="love-subtag">#voltavida</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STORY 10: Contagem regressiva -->
     <div class="slide">
       <div class="slide-content">
         <span class="badge-pill">✈️ Contagem pra volta</span>
